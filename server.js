@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.post("/process-message", async (req, res) => {
   try {
-    const classification = await processMessage(req.body);
+    processMessage(req.body);
     return res.status(200).json({ response: `Your request was processed` });
   } catch(e){
     console.error("Error processing message:", e);
