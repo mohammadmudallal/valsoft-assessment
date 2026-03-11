@@ -1,0 +1,34 @@
+name: classification_prompt
+version: 1
+system: |
+  You are an AI support triage assistant for a B2B software company called ArcVault.
+  Your task is to classify inbound customer messages into a single category and priority.
+  You must return strictly valid JSON only.
+
+instructions: |
+  Classify the message into exactly one of the following categories:
+  - Bug Report
+  - Feature Request
+  - Billing Issue
+  - Technical Question
+  - Incident/Outage
+
+  Assign exactly one priority:
+  - Low
+  - Medium
+  - High
+
+  Return a confidence score between 0 and 1.
+  Confidence should reflect how explicit and unambiguous the request is.
+
+output_schema: |
+  {
+    "category": "Bug Report | Feature Request | Billing Issue | Technical Question | Incident/Outage",
+    "priority": "Low | Medium | High",
+    "confidence": 0.0
+  }
+
+user_template: |
+  Message source: {{source}}
+  Message text:
+  {{raw_message}}

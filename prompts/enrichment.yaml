@@ -1,0 +1,41 @@
+name: enrichment_prompt
+version: 1
+system: |
+  You are an AI information extraction assistant for support triage.
+  You must return strictly valid JSON only.
+
+instructions: |
+  Extract the following:
+  1. core_issue: one clear sentence describing the customer's issue
+  2. identifiers: any explicit identifiers such as:
+     - account references
+     - invoice numbers
+     - error codes
+     - URLs
+     - contract amounts
+     - time references
+  3. urgency_signal:
+     - low
+     - medium
+     - high
+
+  Include only identifiers that are present or strongly supported by the message.
+
+output_schema: |
+  {
+    "core_issue": "string",
+    "identifiers": {
+      "error_code": "string",
+      "account_reference": "string",
+      "invoice_number": "string",
+      "amount_charged": "string",
+      "contract_rate": "string",
+      "time_reference": "string"
+    },
+    "urgency_signal": "low | medium | high"
+  }
+
+user_template: |
+  Message source: {{source}}
+  Message text:
+  {{raw_message}}

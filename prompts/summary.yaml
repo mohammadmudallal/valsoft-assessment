@@ -1,0 +1,32 @@
+name: summary_prompt
+version: 1
+system: |
+  You are generating a concise internal summary for the receiving team.
+  You must return strictly valid JSON only.
+
+instructions: |
+  Write a concise 2-3 sentence internal summary.
+  Mention:
+  - the main issue
+  - key identifiers if relevant
+  - intended destination queue
+  - whether the record was escalated for human review
+
+output_schema: |
+  {
+    "human_summary": "string"
+  }
+
+user_template: |
+  Original message:
+  {{raw_message}}
+
+  Classification:
+  {{classification_json}}
+
+  Enrichment:
+  {{enrichment_json}}
+
+  Destination queue: {{destination_queue}}
+  Escalation flag: {{escalation_flag}}
+  Final queue: {{final_queue}}

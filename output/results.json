@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "source": "Email",
+    "category": "Incident/Outage",
+    "priority": "High",
+    "confidence": 0.9,
+    "core_issue": "Customer is experiencing a 403 error when trying to log in after the recent update",
+    "identifiers": {
+      "error_code": "403",
+      "account_reference": "arcvault.io/user/jsmith",
+      "time_reference": "last Tuesday"
+    },
+    "urgency_signal": "medium",
+    "destination_queue": "Engineering",
+    "escalation_flag": false,
+    "final_queue": "Engineering",
+    "human_summary": "User jsmith is experiencing a 403 error when trying to log in after the recent update on arcvault.io. Issue needs investigation and resolution.",
+    "processed_at": "2026-03-11T13:01:10.068Z"
+  },
+  {
+    "id": 2,
+    "source": "Web Form",
+    "category": "Feature Request",
+    "priority": "Medium",
+    "confidence": 0.9,
+    "core_issue": "Request for a bulk export feature for audit logs",
+    "identifiers": {},
+    "urgency_signal": "medium",
+    "destination_queue": "Product",
+    "escalation_flag": false,
+    "final_queue": "Product",
+    "human_summary": "Request for bulk export feature for audit logs to save time for compliance-heavy organization.",
+    "processed_at": "2026-03-11T13:02:24.122Z"
+  },
+  {
+    "id": 3,
+    "source": "Support Portal",
+    "category": "Billing Issue",
+    "priority": "Medium",
+    "confidence": 0.9,
+    "core_issue": "Discrepancy between the invoice charge and the contract rate",
+    "identifiers": {
+      "invoice_number": "8821",
+      "amount_charged": "$1,240",
+      "contract_rate": "$980/month"
+    },
+    "urgency_signal": "medium",
+    "destination_queue": "Billing",
+    "escalation_flag": false,
+    "final_queue": "Billing",
+    "human_summary": "Invoice #8821 is showing a charge of $1,240, which exceeds our contract rate of $980/month. Requesting investigation for discrepancy.",
+    "processed_at": "2026-03-11T13:02:59.231Z"
+  },
+  {
+    "id": 3,
+    "source": "Emai;",
+    "category": "Technical Question",
+    "priority": "Medium",
+    "confidence": 0.8,
+    "core_issue": "Inquiring about setting up SSO with Okta for authentication provider switch",
+    "identifiers": {},
+    "urgency_signal": "low",
+    "destination_queue": "IT/Security",
+    "escalation_flag": false,
+    "final_queue": "IT/Security",
+    "human_summary": "Inquiry about setting up SSO with Okta for potential switch in authentication provider.",
+    "processed_at": "2026-03-11T13:03:45.749Z"
+  },
+  {
+    "id": 5,
+    "source": "Web Form;",
+    "category": "Incident/Outage",
+    "priority": "High",
+    "confidence": 0.9,
+    "core_issue": "Dashboard not loading since 2pm EST affecting multiple users",
+    "identifiers": {
+      "time_reference": "2pm EST"
+    },
+    "urgency_signal": "medium",
+    "destination_queue": "Engineering",
+    "escalation_flag": true,
+    "final_queue": "Human Escalation Queue",
+    "human_summary": "Dashboard loading issue reported by multiple users around 2pm EST, confirmed to be on our end. Escalated for human review.",
+    "processed_at": "2026-03-11T13:04:25.141Z"
+  }
+]
